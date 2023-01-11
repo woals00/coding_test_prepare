@@ -2,81 +2,70 @@
 
 // 2023.01.10 화
 
+//정답
+
+
 #include <iostream>
+#include <string>
 #include <queue>
 
 using namespace std;
 
+string s;
+int input;
+queue<int> q;
+
 int main()
 {
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+
     int num;
     cin >> num;
 
-    queue<int> queue = {};
-    string s, cmd1, cmd2;
-    int input;
-
-    for (int i = 0; i <= num; i++)
+    for (int i = 0; i < num; i++)
     {
-        getline(cin, s);
+        cin >> s;
 
-        cmd1 = s.substr(0, s.find(" "));
-        cmd2 = s.substr(s.find(" ") + 1, s.length());
-
-        input = atoi(cmd2.c_str());
-
-        if (cmd1 == "push")
+        if (s == "push")
         {
-            queue.push(input);
+            cin >> input;
+            q.push(input);
         }
-        if (cmd1 == "pop")
+        else if (s == "pop")
         {
-            if (queue.empty() == true)
-            {
-                cout << "-1" << endl;
-            }
+            if (q.size() == 0)
+                cout << "-1\n";
             else
             {
-                cout << queue.front() << endl;
-                queue.pop();
+                cout << q.front() << "\n";
+                q.pop();
             }
         }
-        if (cmd1 == "size")
+        else if (s == "size")
         {
-            cout << queue.size() << endl;
+            cout << q.size() << "\n";
         }
-        if (cmd1 == "empty")
+        else if (s == "empty")
         {
-            if (queue.empty() == true)
-            {
-                cout << "1" << endl;
-            }
+            if (q.size() == 0)
+                cout << "1\n";
             else
-            {
-                cout << "0" << endl;
-            }
+                cout << "0\n";
         }
-        if (cmd1 == "front")
+        else if (s == "front")
         {
-            if (queue.empty() == true)
-            {
-                cout << "-1" << endl;
-            }
+            if (q.size() == 0)
+                cout << "-1\n";
             else
-            {
-                cout << queue.front() << endl;
-            }
+                cout << q.front() << "\n";
         }
-        if (cmd1 == "back")
+        else
         {
-            if (queue.empty() == true)
-            {
-                cout << "-1" << endl;
-            }
+            if (q.empty() == true)
+                cout << "-1\n";
             else
-            {
-                cout << queue.back() << endl;
-            }
+                cout << q.back() << "\n";
         }
     }
 }
