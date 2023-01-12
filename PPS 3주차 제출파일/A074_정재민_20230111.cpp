@@ -1,41 +1,69 @@
-// pps 74번 leetcode Fizz Buzz
+// pps 74번 leetcode Valid Palindrome
 
 // 2023.01.11 수
 
-//정답
-
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<string> fizzBuzz;
+    string s;
+    string r;
+    getline(cin, s);
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < s.length(); i++)
     {
-        if (i % 3 == 0 && i % 5 == 0)
-            fizzBuzz.push_back("FizzBuzz");
-        else if (i % 3 == 0)
-            fizzBuzz.push_back("Fizz");
-        else if (i % 5 == 0)
-            fizzBuzz.push_back("Buzz");
+        if (isalpha(s[i]) == 1)
+        {
+            if (isupper(s[i]) == 1)
+            {
+                r += tolower(s[i]);
+            }
+            else
+            {
+                r += s[i];
+            }
+        }
+    }
+
+    string s1;
+    string s2;
+
+    for (int p = 0; p < r.length() / 2; p++)
+    {
+        if (r.length() % 2 == 0)
+        {
+            s1 += r[p];
+        }
         else
-            fizzBuzz.push_back(to_string(i));
+        {
+            if (p == r.length() / 2)
+            {
+                break;
+            }
+            s1 += r[p];
+        }
     }
-
-    for (int i = 0; i < fizzBuzz.size(); i++)
+    for (int q = r.length(); q >= r.length() / 2; q--)
     {
-        std::cout << "Random- : " << fizzBuzz[i] << std::endl;
+        if (r.length() % 2 == 0)
+        {
+            s2 += r[q];
+        }
+        else
+        {
+            if (q == r.length() / 2)
+            {
+                break;
+            }
+            s2 += r[q];
+        }
     }
-}
 
-// std::vector<int>::iterator iter;
-// for(iter = v.begin(); iter!= v.end(); iter++)
-// {
-//     std::cout << "Iterator : " << *iter << std::endl;
-// }
+    cout << "s1: " << s1 << endl;
+    ;
+    cout << "s2: " << s2;
+    return 0;
+}
