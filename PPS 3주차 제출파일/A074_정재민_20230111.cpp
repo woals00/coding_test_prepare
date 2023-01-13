@@ -28,42 +28,24 @@ int main()
         }
     }
 
-    string s1;
-    string s2;
+    int cnt = 0;
 
-    for (int p = 0; p < r.length() / 2; p++)
+    for (int j = 0; j < r.length() / 2; j++)
     {
-        if (r.length() % 2 == 0)
+        // cout << r[j] << " : " << r[r.length() - 1 - j] << endl;
+        if (r[j] == r[r.length() - 1 - j])
         {
-            s1 += r[p];
+            cnt++;
         }
         else
         {
-            if (p == r.length() / 2)
-            {
-                break;
-            }
-            s1 += r[p];
+            cout << "false" << endl;
+            break;
         }
     }
-    for (int q = r.length(); q >= r.length() / 2; q--)
+    if (cnt == r.length() / 2)
     {
-        if (r.length() % 2 == 0)
-        {
-            s2 += r[q];
-        }
-        else
-        {
-            if (q == r.length() / 2)
-            {
-                break;
-            }
-            s2 += r[q];
-        }
+        cout << "T";
     }
-
-    cout << "s1: " << s1 << endl;
-    ;
-    cout << "s2: " << s2;
-    return 0;
 }
+
