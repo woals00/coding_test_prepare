@@ -2,7 +2,7 @@
 
 // 2023.01.16 월
 
-
+// 시간초과
 
 #include <iostream>
 
@@ -13,27 +13,19 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    long a, b, c, n;
-    long result = 0;
-    long cnt = 0;
+    int a, b, c, n;
+    int result = 0;
+    int cnt = 0;
     cin >> a;
     cin >> b;
     cin >> c;
-    n = a;
-    while (1)
+    if (c - b <= 0)
     {
-        if (b > c)
-        {
-            cout << -1;
-            break;
-        }
-        n += b;
-        result += c;
-        cnt++;
-        if (result > n)
-        {
-            cout << cnt;
-            break;
-        }
+        cout << -1;
+    }
+    else
+    {
+        result = a / (c - b) + 1;
+        cout << result;
     }
 }
