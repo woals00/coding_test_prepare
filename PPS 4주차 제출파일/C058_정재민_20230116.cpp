@@ -2,7 +2,7 @@
 
 // 2023.01.16 월
 
-//정답
+// 정답
 
 #include <iostream>
 #include <algorithm>
