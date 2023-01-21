@@ -60,7 +60,7 @@ int main() // 너무 노가다,,
     cout << s;
 }
 
-class Solution {
+class Solution { // 식 보고 이해하기
 public:
     string convertToTitle(int n) {
         string ans;

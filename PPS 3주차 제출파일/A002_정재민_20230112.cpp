@@ -2,6 +2,8 @@
 
 // 2023.01.12 목
 
+//정답
+
 #include <iostream>
 #include <string>
 #include <vector>
